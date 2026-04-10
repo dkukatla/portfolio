@@ -1,4 +1,6 @@
 ---
+import ThreeBackground from '../components/ThreeBackground.astro';
+
 interface Props {
   title?: string;
   description?: string;
@@ -30,6 +32,7 @@ const {
     <title>{title}</title>
   </head>
   <body>
+    <ThreeBackground />
     <slot />
     <script>
       import '../scripts/main.js';
