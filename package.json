@@ -1,0 +1,24 @@
+{
+  "name": "portfolio",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Personal portfolio website",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@astrojs/check": "^0.9.8",
+    "@tailwindcss/vite": "^4.2.2",
+    "astro": "^6.1.4",
+    "tailwindcss": "^4.2.2",
+    "typescript": "^5.9.3"
+  },
+  "overrides": {
+    "vite": "^7"
+  }
+}

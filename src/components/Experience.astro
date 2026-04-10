@@ -1,0 +1,350 @@
+---
+const experiences = [
+  {
+    type: 'work',
+    title: 'Software Engineer',
+    company: 'Compusoft Integrated Solutions — Alpharetta, GA',
+    period: 'Nov 2025 — Present',
+    description: 'Architected Spring Boot and FastAPI microservices powering onboarding and approval workflows for 5 business teams. Introduced GraphQL to reduce API response payload by 35%, built a WebSocket notification layer with sub-100ms delivery, and delivered a Next.js frontend consolidating 3 legacy tools.',
+    tech: ['Spring Boot', 'Next.js', 'GraphQL', 'WebSockets', 'Docker', 'AWS'],
+  },
+  {
+    type: 'work',
+    title: 'Software Engineer',
+    company: 'Spark Cloud INC — Berkeley Lake, GA',
+    period: 'Jun 2024 — Nov 2025',
+    description: 'Designed and shipped an AI knowledge assistant used by 10K+ users/day — Spring Boot service layer, Pinecone vector store, OpenAI embeddings, and Next.js chat UI. Extended RAG with LangChain tool-calling agents and LangGraph multi-step reasoning, achieving 20% improvement in retrieval precision.',
+    tech: ['Spring Boot', 'OpenAI', 'LangChain', 'Pinecone', 'AWS', 'Next.js'],
+  },
+  {
+    type: 'work',
+    title: 'Graduate Service Assistant (Teaching Assistant)',
+    company: 'Arizona State University — Tempe, AZ',
+    period: 'Dec 2023 — May 2024',
+    description: 'Served as a Teaching Assistant for CSE 468 — Computer Network Security. Assisted in grading assignments and exams, held office hours to support students with course concepts including cryptography, network protocols, and security analysis.',
+    tech: ['Network Security', 'Cryptography', 'Teaching'],
+  },
+  {
+    type: 'education',
+    title: 'M.S. Computer Science',
+    company: 'Arizona State University',
+    period: 'Aug 2022 — May 2024',
+    description: 'Focused on software engineering, distributed systems, and machine learning. Gained hands-on experience with cloud-native architectures and AI/ML technologies.',
+    tech: ['Distributed Systems', 'Machine Learning', 'Cloud Computing'],
+  },
+  {
+    type: 'work',
+    title: 'Software Engineer Intern',
+    company: 'SMPS — Bengaluru, India',
+    period: 'Jan 2022 — Jul 2022',
+    description: 'Built Spring Boot services for an internal request management platform, replacing a manual email-based process and reducing handling time by 60%. Designed MySQL-backed REST and GraphQL APIs with Elasticsearch indexing across 50K+ documents.',
+    tech: ['Spring Boot', 'MySQL', 'Elasticsearch', 'GraphQL'],
+  },
+  {
+    type: 'education',
+    title: 'B.Tech Computer Science Engineering',
+    company: 'REVA University',
+    period: 'Aug 2018 — May 2022',
+    description: 'Built a strong foundation in data structures, algorithms, and software engineering principles. Active participant in coding competitions and technical projects.',
+    tech: ['Data Structures', 'Algorithms', 'Software Engineering'],
+  },
+];
+---
+
+<section id="experience" class="experience-section">
+  <div class="section-container">
+    <h2 class="section-title reveal">
+      My <span class="gradient-text">Journey</span>
+    </h2>
+  <p class="section-subtitle reveal">
+      A track record of shipping production software with measurable impact.
+    </p>
+
+    <div class="timeline">
+      {experiences.map((exp, index) => (
+        <div class={`timeline-item ${index % 2 === 0 ? 'left' : 'right'} reveal`}>
+          <div class="timeline-dot">
+            {exp.type === 'work' ? (
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="7" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+            ) : (
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+            )}
+          </div>
+          <button
+            class="timeline-card glass glass-hover"
+            type="button"
+            aria-expanded="false"
+          >
+            <div class="timeline-summary">
+              {exp.type === 'education' ? (
+                <>
+                  <h3 class="timeline-title">{exp.company}</h3>
+                  <span class="timeline-company">{exp.title}</span>
+                  <span class="timeline-summary-period">{exp.period}</span>
+                </>
+              ) : (
+                <>
+                  <h3 class="timeline-title">{exp.company}</h3>
+                  <span class="timeline-company">{exp.title}</span>
+                  <span class="timeline-summary-period">{exp.period}</span>
+                </>
+              )}
+            </div>
+            <div class="timeline-details">
+              <span class="timeline-period">{exp.period}</span>
+              <p class="timeline-description">{exp.description}</p>
+              <div class="timeline-tech">
+                {exp.tech.map(t => (
+                  <span class="tech-badge">{t}</span>
+                ))}
+              </div>
+            </div>
+          </button>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .experience-section {
+    background: var(--bg-secondary);
+    position: relative;
+  }
+
+  .experience-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--border-subtle), transparent);
+  }
+
+  .timeline {
+    position: relative;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem 0;
+  }
+
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: linear-gradient(to bottom, transparent, var(--accent-1), var(--accent-2), transparent);
+    transform: translateX(-50%);
+  }
+
+  .timeline-item {
+    position: relative;
+    width: 50%;
+    padding: 1.5rem;
+  }
+
+  .timeline-item.left {
+    left: 0;
+    padding-right: 3rem;
+    text-align: right;
+  }
+
+  .timeline-item.right {
+    left: 50%;
+    padding-left: 3rem;
+    text-align: left;
+  }
+
+  .timeline-dot {
+    position: absolute;
+    top: 2rem;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--bg-primary);
+    border: 2px solid var(--accent-1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--accent-1);
+    z-index: 2;
+  }
+
+  .timeline-item.left .timeline-dot {
+    right: -20px;
+  }
+
+  .timeline-item.right .timeline-dot {
+    left: -20px;
+  }
+
+  .timeline-card {
+    width: 100%;
+    text-align: inherit;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    cursor: pointer;
+    background-color: transparent;
+    padding: 1.75rem;
+    transition: all var(--transition-base);
+  }
+
+  .timeline-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(255, 255, 255, 0.18);
+    box-shadow:
+      0 16px 48px rgba(0, 0, 0, 0.3),
+      0 0 40px rgba(99, 102, 241, 0.06),
+      inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  }
+
+  .timeline-period {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--accent-1);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .timeline-title {
+    font-size: 1.15rem;
+    margin: 0;
+  }
+
+  .timeline-company {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    display: block;
+    margin-top: 0.35rem;
+  }
+
+  .timeline-summary {
+    position: relative;
+    padding-right: 1.5rem;
+  }
+
+  .timeline-summary-period {
+    display: inline-block;
+    margin-top: 0.55rem;
+    font-size: 0.74rem;
+    font-weight: 600;
+    color: var(--accent-1);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .timeline-summary::after {
+    content: '+';
+    position: absolute;
+    right: 0;
+    top: 0;
+    color: var(--accent-1);
+    font-size: 1.15rem;
+    font-weight: 700;
+    line-height: 1;
+    transition: transform var(--transition-fast);
+  }
+
+  .timeline-card.expanded .timeline-summary::after {
+    content: '−';
+    transform: rotate(180deg);
+  }
+
+  .timeline-details {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition:
+      max-height 0.35s ease,
+      opacity 0.25s ease,
+      margin-top 0.25s ease;
+    margin-top: 0;
+  }
+
+  .timeline-card.expanded .timeline-details {
+    max-height: 360px;
+    opacity: 1;
+    margin-top: 0.9rem;
+  }
+
+  .timeline-description {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin-bottom: 1rem;
+  }
+
+  .timeline-tech {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+  }
+
+  .timeline-item.left .timeline-tech {
+    justify-content: flex-end;
+  }
+
+  .tech-badge {
+    padding: 0.2rem 0.6rem;
+    font-size: 0.7rem;
+    font-weight: 500;
+    background: rgba(99, 102, 241, 0.08);
+    color: var(--accent-1);
+    border-radius: var(--radius-full);
+    border: 1px solid rgba(99, 102, 241, 0.15);
+  }
+
+  @media (max-width: 768px) {
+    .timeline::before {
+      left: 20px;
+    }
+
+    .timeline-item {
+      width: 100%;
+      padding: 1rem 1rem 1rem 3.5rem;
+      text-align: left;
+    }
+
+    .timeline-item.left {
+      text-align: left;
+      padding-right: 1rem;
+    }
+
+    .timeline-item.right {
+      left: 0;
+    }
+
+    .timeline-item.left .timeline-dot,
+    .timeline-item.right .timeline-dot {
+      left: 0;
+      right: auto;
+    }
+
+    .timeline-item.left .timeline-tech {
+      justify-content: flex-start;
+    }
+  }
+</style>
+
+<script>
+  const timelineCards = Array.from(document.querySelectorAll('.timeline-card'));
+
+  timelineCards.forEach((card) => {
+    card.addEventListener('click', () => {
+      const isExpanded = !card.classList.contains('expanded');
+
+      timelineCards.forEach((otherCard) => {
+        otherCard.classList.remove('expanded');
+        otherCard.setAttribute('aria-expanded', 'false');
+      });
+
+      if (isExpanded) {
+        card.classList.add('expanded');
+      }
+
+      card.setAttribute('aria-expanded', String(isExpanded));
+    });
+  });
+</script>

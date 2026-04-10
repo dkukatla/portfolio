@@ -1,0 +1,199 @@
+---
+
+---
+
+<section id="about" class="section-container">
+  <h2 class="section-title reveal">
+    About <span class="gradient-text">Me</span>
+  </h2>
+  <p class="section-subtitle reveal">
+    Product-minded software engineer focused on speed, reliability, and business
+    impact.
+  </p>
+
+  <div class="about-grid">
+    <div class="about-image-wrapper reveal-left">
+      <div class="about-image-border">
+        <img
+          src="/images/profile.webp"
+          alt="Dhanush Kukatla — Software Engineer"
+          class="about-image"
+          width="400"
+          height="400"
+        />
+      </div>
+      <div class="image-decoration dec-1"></div>
+      <div class="image-decoration dec-2"></div>
+    </div>
+
+    <div class="about-text reveal-right">
+      <h3 class="about-heading">
+        The Engineer You Hire When <br /><span class="gradient-text"
+          >Outcomes Matter</span
+        >
+      </h3>
+      <p class="about-paragraph">
+        I am a software engineer who combines product thinking with deep
+        engineering execution. I build systems that are not only technically
+        sound, but also clearly tied to user and business outcomes. One example:
+        an AI knowledge assistant serving 10K+ users/day with measurable
+        improvements in support efficiency.
+      </p>
+      <p class="about-paragraph">
+        My strengths include scalable backend design, cloud-native deployment,
+        real-time architectures, and AI integration in production. If your team
+        needs someone who can own ambiguous problems and ship dependable
+        software quickly, I will add value from day one.
+      </p>
+
+      <div class="about-highlights">
+        <div class="highlight glass glass-hover">
+          <span class="highlight-icon">🏗️</span>
+          <div>
+            <strong>Execution at Scale</strong>
+            <span>Production systems from architecture through deployment</span>
+          </div>
+        </div>
+        <div class="highlight glass glass-hover">
+          <span class="highlight-icon">☁️</span>
+          <div>
+            <strong>Cloud + AI Ready</strong>
+            <span
+              >AWS certified, Azure certified, and AI-first implementation
+              experience</span
+            >
+          </div>
+        </div>
+        <div class="highlight glass glass-hover">
+          <span class="highlight-icon">🎓</span>
+          <div>
+            <strong>Strong Technical Foundation</strong>
+            <span
+              >M.S. Computer Science + hands-on delivery across startup-paced
+              teams</span
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.3fr;
+    gap: 4rem;
+    align-items: center;
+  }
+
+  /* ── Image ── */
+  .about-image-wrapper {
+    position: relative;
+    display: flex;
+    justify-content: center;
+  }
+
+  .about-image-border {
+    position: relative;
+    border-radius: var(--radius-xl);
+    padding: 4px;
+    background: linear-gradient(
+      135deg,
+      var(--accent-1),
+      var(--accent-2),
+      var(--accent-3)
+    );
+    z-index: 1;
+  }
+
+  .about-image {
+    display: block;
+    width: 100%;
+    max-width: 350px;
+    border-radius: calc(var(--radius-xl) - 2px);
+    object-fit: cover;
+    aspect-ratio: 1;
+  }
+
+  .image-decoration {
+    position: absolute;
+    border-radius: var(--radius-lg);
+    z-index: 0;
+  }
+
+  .dec-1 {
+    width: 120px;
+    height: 120px;
+    border: 2px solid var(--accent-1);
+    bottom: -20px;
+    right: -20px;
+    opacity: 0.3;
+    animation: float 4s ease-in-out infinite;
+  }
+
+  .dec-2 {
+    width: 80px;
+    height: 80px;
+    background: rgba(99, 102, 241, 0.1);
+    top: -15px;
+    left: -15px;
+    opacity: 0.5;
+    animation: float 5s ease-in-out infinite reverse;
+  }
+
+  /* ── Text ── */
+  .about-heading {
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    margin-bottom: 1.5rem;
+  }
+
+  .about-paragraph {
+    color: var(--text-secondary);
+    margin-bottom: 1rem;
+    font-size: 1rem;
+  }
+
+  /* ── Highlights ── */
+  .about-highlights {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-top: 2rem;
+  }
+
+  .highlight {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 1.25rem;
+    transition: all var(--transition-fast);
+  }
+
+  .highlight-icon {
+    font-size: 1.5rem;
+    flex-shrink: 0;
+  }
+
+  .highlight strong {
+    display: block;
+    font-size: 0.95rem;
+    margin-bottom: 0.15rem;
+  }
+
+  .highlight span:last-child {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+  }
+
+  @media (max-width: 768px) {
+    .about-grid {
+      grid-template-columns: 1fr;
+      gap: 2.5rem;
+    }
+
+    .about-image {
+      max-width: 280px;
+    }
+  }
+</style>
