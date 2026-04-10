@@ -113,13 +113,41 @@ function initContactForm() {
   form.addEventListener('submit', (e) => {
     e.preventDefault();
     const btn = form.querySelector('.form-submit span');
-    if (btn) {
-      btn.textContent = 'Message Sent! ✓';
+    const originalText = btn ? btn.textContent : 'Send Message';
+    
+    if (btn) btn.textContent = 'Sending...';
+
+    const formData = new FormData(form);
+    const object = Object.fromEntries(formData);
+    const json = JSON.stringify(object);
+
+    fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+      },
+      body: json
+    })
+    .then(async (response) => {
+      let json = await response.json();
+      if (response.status == 200) {
+        if (btn) btn.textContent = 'Message Sent! ✓';
+      } else {
+        console.log(response);
+        if (btn) btn.textContent = 'Error Sending';
+      }
+    })
+    .catch(error => {
+      console.log(error);
+      if (btn) btn.textContent = 'Error Sending';
+    })
+    .finally(() => {
       setTimeout(() => {
-        btn.textContent = 'Send Message';
+        if (btn) btn.textContent = originalText;
         form.reset();
       }, 3000);
-    }
+    });
   });
 }
 
