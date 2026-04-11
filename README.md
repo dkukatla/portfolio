@@ -1,5 +1,9 @@
 # Dhanush Kukatla — Software Engineer Portfolio
 
+[![Deployed on Vercel](https://img.shields.io/badge/Deployed_on-Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://dhanushkukatla.vercel.app/)
+
+**View Live:** [https://dhanushkukatla.vercel.app/](https://dhanushkukatla.vercel.app/)
+
 A high-performance, interactive 3D personal portfolio built to showcase software engineering experience, technical skills, and featured projects. Designed with an emphasis on premium aesthetics, zero-layout-shift performance, and seamless user interaction.
 
 ## ✨ Features
